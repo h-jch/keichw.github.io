@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on Kinopio BLOG</title>
+    <link>https://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on Kinopio BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Jul 2019 16:37:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最小生成树</title>
+      <link>https://example.com/post/minimum-spanning-tree/</link>
+      <pubDate>Tue, 30 Jul 2019 16:37:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/minimum-spanning-tree/</guid>
+      <description>基本概念 最小生成树 是一棵树 无回路，向生成树中任加一条边都一定构成回路 |V|个顶点一定有|V|-1条边 是生成树 包含全部顶点 |V|-1条边都在图里 边的权重最小 贪心算法 对于如何最小生成树的算法，我们使用贪心</description>
+    </item>
+    
+    <item>
+      <title>最短路径问题</title>
+      <link>https://example.com/post/shortest-path/</link>
+      <pubDate>Tue, 30 Jul 2019 15:40:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/shortest-path/</guid>
+      <description>最短路径问题的抽象 在网络中，求两个不同顶点之间的所有路径中，边的权值之和最小的那一条路径。 这条路径就是两点之间的最短路径 第一个顶点为源点 最后一个顶点为终点 问题分类 单源最短路径问题：从某固定源点出发，求</description>
+    </item>
+    
+    <item>
+      <title>图</title>
+      <link>https://example.com/post/graph/</link>
+      <pubDate>Sat, 27 Jul 2019 23:30:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/graph/</guid>
+      <description>基本概念 图表示多对多的关系。包含 一组顶点：通常用V(Vertex)表示顶点集合 一组边：通常用E(Edge)表示边的集合 边是顶点对：(v,w)是集合E的元素，其中v，w是集合V的元素 有向边&amp;lt;v,w</description>
+    </item>
+    
+    <item>
+      <title>堆</title>
+      <link>https://example.com/post/heap/</link>
+      <pubDate>Thu, 18 Jul 2019 12:27:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/heap/</guid>
+      <description>基本概念 堆是一种用数组来实现的完全二叉树。堆分为两种：最大堆(大顶堆)和最小堆(小顶堆)，差别在于结点的排序方式。在最大堆中，任一结点的关键字是其子树所有结点的最大值，而在最小堆中，任一结点的关键字是</description>
+    </item>
+    
+    <item>
+      <title>平衡二叉树</title>
+      <link>https://example.com/post/balanced-binary-tree/</link>
+      <pubDate>Sun, 30 Jun 2019 16:24:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/balanced-binary-tree/</guid>
+      <description>对于一般的二叉搜索树，搜索树结点不同插入次序，将导致不同的深度和平均查找长度ASL。甚至在极端的情况下，二叉搜索树会退化称线性的链表，导致插入和查找的复杂度下降到O(n)，所以便提出了平衡二叉树的概念</description>
+    </item>
+    
+    <item>
+      <title>二叉搜索树</title>
+      <link>https://example.com/post/binary-search-tree/</link>
+      <pubDate>Sun, 30 Jun 2019 10:06:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/binary-search-tree/</guid>
+      <description>二叉搜索树是为了解决动态查找问题而提出来的，也叫做二叉排序树或二叉查找树。 基本概念 二叉搜索树(BST, Binary Search Tree)：一棵二叉树，可以为空；如果不为空，则要满足以下性质： 非空左子树的所有键值小于其根结</description>
+    </item>
+    
+    <item>
+      <title>二叉树</title>
+      <link>https://example.com/post/binary-tree/</link>
+      <pubDate>Sat, 29 Jun 2019 23:30:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/binary-tree/</guid>
+      <description>基本概念 二叉树：一个有穷的结点的集合，这个集合可以为空，若不为空，则它是由根节点和称为其左子树和右子树的两个不相交的二叉树组成。 有几种特殊的二叉树，分别是斜二叉树、完全二叉树和满二叉树。 二叉树的几个重</description>
+    </item>
+    
+    <item>
+      <title>队列</title>
+      <link>https://example.com/post/queue/</link>
+      <pubDate>Tue, 25 Jun 2019 23:30:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/queue/</guid>
+      <description>队列是一种基本的数据结构 基本概念 队列(Queue)：具有一定操作约束的线性表 只能在一端插入，而在另一端删除 数据插入：入队列(AddQ) 数据删除：出队列(DeleteQ) 先进先出：First In First Out(FIFO) 抽象数</description>
+    </item>
+    
+    <item>
+      <title>栈</title>
+      <link>https://example.com/post/stack/</link>
+      <pubDate>Thu, 20 Jun 2019 23:30:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/stack/</guid>
+      <description>栈是一种基本的数据结构 基本概念 栈(Stack)：具有一定操作约束的线性表。 只在一端(栈顶，Top)做插入、删除操作 插入数据：入栈(Push) 删除数据：出栈(Pop) 后入先出：Last In First Out(LIFO) 抽象数据类型</description>
+    </item>
+    
+    <item>
+      <title>线性表</title>
+      <link>https://example.com/post/linear-list/</link>
+      <pubDate>Wed, 19 Jun 2019 23:30:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/linear-list/</guid>
+      <description>线性表是最基本的数据结构。 基本概念 线性表(Linear List)：由同类型数据元素构成有序序列的线性结构。 表中元素个数称为线性表的长度 线性表没有元素时称为空表 表起始位置为表头，表结束位置为表尾 抽象数据</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on Kinopio BLOG</title>
+    <link>https://example.com/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on Kinopio BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Apr 2019 22:45:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>c&#43;&#43; const关键字</title>
+      <link>https://example.com/post/cpp-const/</link>
+      <pubDate>Sat, 27 Apr 2019 22:45:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/cpp-const/</guid>
+      <description>关于const关键字，有几个注意点。 const的引用 首先是把引用绑定到const对象上，与普通引用不同，对常量的引用不能被用来修改它所绑定的对象。 const int ci=1024; const int &amp;amp;r1=ci; //正确：引用及其对应的对象都是常量 r1=42; //</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43; primer学习</title>
+      <link>https://example.com/post/cppprimer-ans/</link>
+      <pubDate>Fri, 19 Apr 2019 15:47:00 +0800</pubDate>
+      
+      <guid>https://example.com/post/cppprimer-ans/</guid>
+      <description>看《c++ primer》这本书已经很久了，也不敢说自己掌握了多少。之前过了一遍，这本书几乎覆盖了c++的全部知识点，很丰富，但也很杂。 最近在重看这本书，顺便把每节的习题给做了，并把部分习题代码上传到了</description>
+    </item>
+    
+  </channel>
+</rss>

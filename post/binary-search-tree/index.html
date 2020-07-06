@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.73.0" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8aa2d3" />
+<meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>二叉搜索树 - Kinopio BLOG</title>
+
+
+<meta name="author" content="Kinopio" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="数据结构" />
+
+<meta property="og:title" content="二叉搜索树" />
+<meta property="og:description" content="二叉搜索树是为了解决动态查找问题而提出来的，也叫做二叉排序树或二叉查找树。 基本概念 二叉搜索树(BST, Binary Search Tree)：一棵二叉树，可以为空；如果不为空，则要满足以下性质： 非空左子树的所有键值小于其根结" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/binary-search-tree/" />
+<meta property="og:image" content="https://example.com/img/og.png"/>
+<meta property="article:published_time" content="2019-06-30T10:06:00+08:00" />
+<meta property="article:modified_time" content="2019-06-30T10:06:00+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/img/og.png"/>
+
+<meta name="twitter:title" content="二叉搜索树"/>
+<meta name="twitter:description" content="二叉搜索树是为了解决动态查找问题而提出来的，也叫做二叉排序树或二叉查找树。 基本概念 二叉搜索树(BST, Binary Search Tree)：一棵二叉树，可以为空；如果不为空，则要满足以下性质： 非空左子树的所有键值小于其根结"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+<link rel="stylesheet" href="/assets/css/fuji.min.css" />
+
+
+
+
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+    
+    var fujiThemeData = localStorage.getItem('fuji_data-theme');
+    
+    if (!fujiThemeData) {
+        localStorage.setItem('fuji_data-theme', 'auto');
+    } else {
+        
+        if (fujiThemeData !== 'auto') {
+            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+        }
+    }
+</script>
+<script data-cfasync="false">
+    
+    function browserDetection(ua) {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    var ua = window.navigator.userAgent;
+    if (browserDetection(ua)) {
+        window.location.href('https:\/\/example.com\/ie\/');
+    }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://example.com">Kinopio BLOG</a>
+            
+            <span class="title-sub">(ง •̀_•́)ง</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://example.com/post/binary-search-tree/">二叉搜索树</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><ion-icon name="today"></ion-icon>&nbsp;2019-06-30</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;992 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;2 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a>&nbsp;</span>
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>二叉搜索树是为了解决<strong>动态查找</strong>问题而提出来的，也叫做二叉排序树或二叉查找树。</p>
+<h3 id="基本概念">基本概念</h3>
+<p>二叉搜索树(BST, Binary Search Tree)：一棵二叉树，可以为空；如果不为空，则要满足以下性质：</p>
+<!-- more -->
+<blockquote>
+<p>非空左子树的所有键值小于其根结点的键值
+非空右子树的所有键值大于其根结点的键值
+左、右子树都是二叉搜索树
+对二叉搜索树进行中序遍历，即可得到有序的数列</p>
+</blockquote>
+<h3 id="抽象数据类型描述">抽象数据类型描述</h3>
+<p>类型名称：二叉搜索树
+数据对象集：一棵二叉树，对于树中每个结点X，它的左子树中所有关键字值小于X的关键字值，而它的右子树中所有关键字值大于X的关键字值
+操作集：BST是SearchTree类型，X是ElementType类型</p>
+<ul>
+<li>Position Find(SearchTree BST, ElementType X)：从二叉搜索树BST中查找元素X，返回其所在结点的位置</li>
+<li>Position FindMin(SearchTree BST)：从二叉搜索树BST中查找并返回最小元素所在结点的位置</li>
+<li>Position FindMax(SearchTree BST)：从二叉搜索树BST中查找并返回最大元素所在结点的位置</li>
+<li>SearchTree Insert(SearchTree BST, ElementType X)：把元素X插入到二叉搜索树BST中</li>
+<li>SearchTree Delete(SearchTree BST, ElementType X)：把元素X从二叉搜索树BST中删除</li>
+</ul>
+<h3 id="查找操作">查找操作</h3>
+<p>递归形式</p>
+<pre><code>Position Find(SearchTree BST, ElementType X){
+	if(BST=NULL)
+		return NULL;
+	if(X&lt;BST-&gt;Data)
+		return Find(BST-&gt;Left,X);		//尾递归
+	else if(X&gt;BST-&gt;Data)
+		return Find(BST-&gt;Right,X);
+	else
+		return BST;
+}
+</code></pre>
+<p>迭代形式，执行效率较高</p>
+<pre><code>Position Find(SearchTree BST, ElementType X){
+	while(BST){
+		if(X&gt;BST-&gt;Data)
+			BST=BST-&gt;Right;
+		else if(X&lt;BST-&gt;Data)
+			BST=BST-&gt;Left;
+		else
+			return BST;
+	}
+	return NULL;
+}
+</code></pre>
+<h3 id="查找最大最小元素">查找最大最小元素</h3>
+<p>最大元素一定在树的最右分支的端结点上，而最小元素一定在树的最左分支的端结点上。
+递归实现</p>
+<pre><code>Position FindMin(SearchTree BST){
+	if(!BST)
+		return NULL;
+	else if(BST-&gt;Left==NULL)
+		return BST;
+	else
+		return FindMin(BST-&gt;Left);
+}
+
+
+Position FindMax(SearchTree BST){
+	if(!BST)
+		return NULL;
+	else if(BST-&gt;Right==NULL)
+		return BST;
+	else
+		return FindMax(BST-&gt;Right);
+}
+</code></pre>
+<p>迭代实现</p>
+<pre><code>Position FindMin(SearchTree BST){
+	if(BST)
+		while(BST-&gt;Left!=NULL)
+			BST=BST-&gt;Left;
+	return BST;
+}
+
+
+Position FindMax(SearchTree BST){
+	if(BST)
+		while(BST-&gt;Right!=NULL)
+			BST=BST-&gt;Right;
+	return BST;
+}
+</code></pre>
+<h3 id="插入">插入</h3>
+<p>二叉搜索树的插入操作，可以采用与Find类似的方法，确定插入位置</p>
+<pre><code>SearchTree Insert(SearchTree BST, ElementType X){
+	if(BST==NULL){		//原树为空，则先创建一棵树，生成一个结点
+		BST=(SearchTree)malloc(sizeof(struct TNode));
+		BST-&gt;Data=X;
+		BST-Left=BST-&gt;Right=NULL;
+	}
+	else{
+		if(X&lt;BST-&gt;Data)
+			BST-&gt;Left=Insert(BST-&gt;Left,X); 		  //递归插入左子树
+		else if(X&gt;BST-&gt;Data)
+			BST-&gt;Right=Insert(BST-&gt;Right,X);		//递归插入右子树
+		//else X在树中已存在，则什么都不做
+	}
+	return BST;
+}
+</code></pre>
+<h3 id="删除">删除</h3>
+<p>删除一个元素，要考虑三种情况：</p>
+<ol>
+<li>要删除的是叶结点：直接删除，再修改其父结点指针，置为NULL</li>
+<li>要删除的结点只有一个孩子结点：将其父结点的指针指向要删除的孩子结点</li>
+<li>要删除的结点有左、右两颗子树：用右子树的最小元素或者左子树的最大元素替代被删除结点</li>
+</ol>
+<pre><code>SearchTree Delete(SearchTree BST, ElementType X){
+	Position tmp;
+	if(BST==NULL)
+		printf(&quot;要删除的元素未找到\n&quot;);
+	else{
+		if(X&lt;BST-&gt;Data)
+			BST-&gt;Left=Delete(BST-&gt;Left,X);		//从左子树递归删除
+		else if(X&gt;BST-&gt;Data)
+			BST-&gt;Right=Delete(BST-&gt;Right,X);		//从右子树递归删除
+		else{		//找到了要被删除元素的位置
+			if(BST-&gt;Left&amp;&amp;BST-&gt;Right){		//被删除结点有两个子节点
+				tmp=FindMin(BST-&gt;Right);		//找到右子树的最小元素
+				BST-&gt;Data=tmp-&gt;Data;		//替代被删除结点
+				BST-&gt;Right=Delete(BST-&gt;Right,BST-&gt;Data);	//删除右子树的最小元素
+			}
+			else{		//被删除结点有一个或零个子结点
+				tmp=BST;
+				if(BST-&gt;Left==NULL)		//只有右孩子或无子结点
+					BST=BST-&gt;Right;
+				else		//只有左孩子
+					BST=BST-&gt;Left;
+				free(tmp);
+			}
+		}
+	}
+	return BST;
+}
+</code></pre>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本概念">基本概念</a></li>
+        <li><a href="#抽象数据类型描述">抽象数据类型描述</a></li>
+        <li><a href="#查找操作">查找操作</a></li>
+        <li><a href="#查找最大最小元素">查找最大最小元素</a></li>
+        <li><a href="#插入">插入</a></li>
+        <li><a href="#删除">删除</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/keichw" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-toggle-mode">
+        <ion-icon name="contrast"></ion-icon>
+    </div>
+    <div class="btn-scroll-top">
+        <ion-icon name="chevron-up"></ion-icon>
+    </div>
+</div>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            <span>&copy; 2020 <a href="https://example.com">Kinopio</a> |
+                基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
+                   target="_blank">Hugo</a> 构建</span>
+        </div>
+    </div>
+</footer>
+    
+    <script async type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+</body>
+
+</html>

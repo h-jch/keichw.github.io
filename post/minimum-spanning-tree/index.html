@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.73.0" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8aa2d3" />
+<meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>最小生成树 - Kinopio BLOG</title>
+
+
+<meta name="author" content="Kinopio" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="数据结构" />
+
+<meta property="og:title" content="最小生成树" />
+<meta property="og:description" content="基本概念 最小生成树 是一棵树 无回路，向生成树中任加一条边都一定构成回路 |V|个顶点一定有|V|-1条边 是生成树 包含全部顶点 |V|-1条边都在图里 边的权重最小 贪心算法 对于如何最小生成树的算法，我们使用贪心" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/minimum-spanning-tree/" />
+<meta property="og:image" content="https://example.com/img/og.png"/>
+<meta property="article:published_time" content="2019-07-30T16:37:00+08:00" />
+<meta property="article:modified_time" content="2019-07-30T16:37:00+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/img/og.png"/>
+
+<meta name="twitter:title" content="最小生成树"/>
+<meta name="twitter:description" content="基本概念 最小生成树 是一棵树 无回路，向生成树中任加一条边都一定构成回路 |V|个顶点一定有|V|-1条边 是生成树 包含全部顶点 |V|-1条边都在图里 边的权重最小 贪心算法 对于如何最小生成树的算法，我们使用贪心"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+<link rel="stylesheet" href="/assets/css/fuji.min.css" />
+
+
+
+
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+    
+    var fujiThemeData = localStorage.getItem('fuji_data-theme');
+    
+    if (!fujiThemeData) {
+        localStorage.setItem('fuji_data-theme', 'auto');
+    } else {
+        
+        if (fujiThemeData !== 'auto') {
+            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+        }
+    }
+</script>
+<script data-cfasync="false">
+    
+    function browserDetection(ua) {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    var ua = window.navigator.userAgent;
+    if (browserDetection(ua)) {
+        window.location.href('https:\/\/example.com\/ie\/');
+    }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://example.com">Kinopio BLOG</a>
+            
+            <span class="title-sub">(ง •̀_•́)ง</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://example.com/post/minimum-spanning-tree/">最小生成树</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><ion-icon name="today"></ion-icon>&nbsp;2019-07-30</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;1920 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;4 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a>&nbsp;</span>
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <h3 id="基本概念">基本概念</h3>
+<p>最小生成树</p>
+<!-- more -->
+<ul>
+<li>是一棵树
+<ul>
+<li>无回路，向生成树中任加一条边都一定构成回路</li>
+<li>|V|个顶点一定有|V|-1条边</li>
+</ul>
+</li>
+<li>是生成树
+<ul>
+<li>包含全部顶点</li>
+<li>|V|-1条边都在图里</li>
+</ul>
+</li>
+<li>边的权重最小</li>
+</ul>
+<h3 id="贪心算法">贪心算法</h3>
+<p>对于如何最小生成树的算法，我们使用贪心算法。</p>
+<ul>
+<li>什么是“贪”：每一步都要好的</li>
+<li>什么是“好”：权重最小的边</li>
+<li>需要约束
+<ul>
+<li>只能用图里有的边</li>
+<li>只能正好用掉|V|-1条边</li>
+<li>不能有回路</li>
+</ul>
+</li>
+</ul>
+<h3 id="prim算法">Prim算法</h3>
+<p>类似Dijkstra算法</p>
+<pre><code>Vertex FindMinDist(MGraph Graph, WeightType dist[]){		//返回未被收录顶点中dist最小者
+	Vertex MinV,V;
+	WeightType MinDist=INFINITY;
+
+	for(V=0;V&lt;Graph-&gt;Nv;V++){		//对于图中每个顶点V
+		if(dist[V]!=0&amp;&amp;dist[V]&lt;MinDist){		//若V未被收录且dist[V]更小
+			MinDist=dist[V];		//更新最小距离
+			MinV=V;			//更新对应顶点
+		}
+	}
+	if(MinDist&lt;INFINITY)
+		return MinV;
+	else
+		return false;
+}
+
+int Prim(MGraph Graph, LGraph MST){		//将最小生成树保存为邻接表存储的图MST，返回最小权重和
+	WeightType dist[MaxVertexNum],TotalWeight;
+	Vertex parent[MaxVertexNum],V,W;
+	int VCount;
+	Edge E;
+
+	for(V=0;V&lt;Graph-&gt;Nv;V++){		//初始化，默认初始顶点下标为0
+		dist[V]=Graph-&gt;G[0][V];
+		parent[V]=0;
+	}
+	TotalWeight=0;
+	VCount=0;
+
+	MST=CreateGraph(Graph-&gt;Nv);		//创建包含所有顶点但没有边的邻接表存储的图
+	E=(Edge)malloc(sizeof(struct ENode));		//建立空的边结点
+
+	dist[0]=0;
+	VCount++;
+	parent[0]=-1;
+
+	while(1){
+		V=FindMinDist(Graph, dist);		//找到未被收录顶点中dist最小者
+		if(V==ERROR)
+			break;
+		E-&gt;V1=parent[V];		//将V及相应的边&lt;parent[V],V&gt;收录进MST
+		E-&gt;V2=V;
+		E-&gt;Weight=dist[V];
+		InsertEdge(MST,E);
+		TotalWeight+=dist[V];
+		dist[V]=0;
+		VCount++;
+
+		for(W=0;W&lt;Graph-&gt;Nv;W++)
+			if(dist[W]!=0&amp;&amp;Graph-&gt;G[V][W]&lt;INFINITY){		//若W未被收录且W是V的邻接点
+				if(Graph-&gt;G[V][W]&lt;dist[W]){		//收录进V使得dist[W]变小
+					dist[W]=Graph-&gt;G[V][W];		//更新dist[W]
+					parent[W]=V;		//更新树
+				}
+			}	
+	}
+	if(VCount&lt;Graph-&gt;Nv)		//MST中的顶点不到|V|个
+		TotalWeight=ERROR;
+	return TotalWeight;
+}
+</code></pre>
+<p>对于稠密图，时间复杂度T=O(|V|^2)</p>
+<h3 id="kruskal算法">Kruskal算法</h3>
+<p>Kruskal算法是将森林合并成树。
+伪代码如下：</p>
+<pre><code>void Kruskal(Graph G){
+	MST={ };
+	while(MST中不到|V|-1条边 &amp;&amp; E中还有边){
+		从E中取一条权重最小的边E(V,W);		//最小堆
+		将E(V,W)从E中删除;
+		if(E(V,W)不在MST中构成回路)		//并查集
+			将E(V,W)加入MST;
+		else
+			彻底无视E(V,W);
+	}
+	if(MST中不到|V|-1条边)
+		ERROR(&quot;生成树不存在&quot;);
+}
+</code></pre>
+<p>C语言代码如下，摘自浙大陈越奶奶数据结构：</p>
+<pre><code>/* 邻接表存储 - Kruskal最小生成树算法 */
+ 
+/*-------------------- 顶点并查集定义 --------------------*/
+typedef Vertex ElementType; /* 默认元素可以用非负整数表示 */
+typedef Vertex SetName;     /* 默认用根结点的下标作为集合名称 */
+typedef ElementType SetType[MaxVertexNum]; /* 假设集合元素下标从0开始 */
+ 
+void InitializeVSet( SetType S, int N )
+{ /* 初始化并查集 */
+    ElementType X;
+ 
+    for ( X=0; X&lt;N; X++ ) S[X] = -1;
+}
+ 
+void Union( SetType S, SetName Root1, SetName Root2 )
+{ /* 这里默认Root1和Root2是不同集合的根结点 */
+    /* 保证小集合并入大集合 */
+    if ( S[Root2] &lt; S[Root1] ) { /* 如果集合2比较大 */
+        S[Root2] += S[Root1];     /* 集合1并入集合2  */
+        S[Root1] = Root2;
+    }
+    else {                         /* 如果集合1比较大 */
+        S[Root1] += S[Root2];     /* 集合2并入集合1  */
+        S[Root2] = Root1;
+    }
+}
+ 
+SetName Find( SetType S, ElementType X )
+{ /* 默认集合元素全部初始化为-1 */
+    if ( S[X] &lt; 0 ) /* 找到集合的根 */
+        return X;
+    else
+        return S[X] = Find( S, S[X] ); /* 路径压缩 */
+}
+ 
+bool CheckCycle( SetType VSet, Vertex V1, Vertex V2 )
+{ /* 检查连接V1和V2的边是否在现有的最小生成树子集中构成回路 */
+    Vertex Root1, Root2;
+ 
+    Root1 = Find( VSet, V1 ); /* 得到V1所属的连通集名称 */
+    Root2 = Find( VSet, V2 ); /* 得到V2所属的连通集名称 */
+ 
+    if( Root1==Root2 ) /* 若V1和V2已经连通，则该边不能要 */
+        return false;
+    else { /* 否则该边可以被收集，同时将V1和V2并入同一连通集 */
+        Union( VSet, Root1, Root2 );
+        return true;
+    }
+}
+/*-------------------- 并查集定义结束 --------------------*/
+ 
+/*-------------------- 边的最小堆定义 --------------------*/
+void PercDown( Edge ESet, int p, int N )
+{ /* 改编代码4.24的PercDown( MaxHeap H, int p )    */
+  /* 将N个元素的边数组中以ESet[p]为根的子堆调整为关于Weight的最小堆 */
+    int Parent, Child;
+    struct ENode X;
+ 
+    X = ESet[p]; /* 取出根结点存放的值 */
+    for( Parent=p; (Parent*2+1)&lt;N; Parent=Child ) {
+        Child = Parent * 2 + 1;
+        if( (Child!=N-1) &amp;&amp; (ESet[Child].Weight&gt;ESet[Child+1].Weight) )
+            Child++;  /* Child指向左右子结点的较小者 */
+        if( X.Weight &lt;= ESet[Child].Weight ) break; /* 找到了合适位置 */
+        else  /* 下滤X */
+            ESet[Parent] = ESet[Child];
+    }
+    ESet[Parent] = X;
+}
+ 
+void InitializeESet( LGraph Graph, Edge ESet )
+{ /* 将图的边存入数组ESet，并且初始化为最小堆 */
+    Vertex V;
+    PtrToAdjVNode W;
+    int ECount;
+ 
+    /* 将图的边存入数组ESet */
+    ECount = 0;
+    for ( V=0; V&lt;Graph-&gt;Nv; V++ )
+        for ( W=Graph-&gt;G[V].FirstEdge; W; W=W-&gt;Next )
+            if ( V &lt; W-&gt;AdjV ) { /* 避免重复录入无向图的边，只收V1&lt;V2的边 */
+                ESet[ECount].V1 = V;
+                ESet[ECount].V2 = W-&gt;AdjV;
+                ESet[ECount++].Weight = W-&gt;Weight;
+            }
+    /* 初始化为最小堆 */
+    for ( ECount=Graph-&gt;Ne/2; ECount&gt;=0; ECount-- )
+        PercDown( ESet, ECount, Graph-&gt;Ne );
+}
+ 
+int GetEdge( Edge ESet, int CurrentSize )
+{ /* 给定当前堆的大小CurrentSize，将当前最小边位置弹出并调整堆 */
+ 
+    /* 将最小边与当前堆的最后一个位置的边交换 */
+    Swap( &amp;ESet[0], &amp;ESet[CurrentSize-1]);
+    /* 将剩下的边继续调整成最小堆 */
+    PercDown( ESet, 0, CurrentSize-1 );
+ 
+    return CurrentSize-1; /* 返回最小边所在位置 */
+}
+/*-------------------- 最小堆定义结束 --------------------*/
+ 
+ 
+int Kruskal( LGraph Graph, LGraph MST )
+{ /* 将最小生成树保存为邻接表存储的图MST，返回最小权重和 */
+    WeightType TotalWeight;
+    int ECount, NextEdge;
+    SetType VSet; /* 顶点数组 */
+    Edge ESet;    /* 边数组 */
+ 
+    InitializeVSet( VSet, Graph-&gt;Nv ); /* 初始化顶点并查集 */
+    ESet = (Edge)malloc( sizeof(struct ENode)*Graph-&gt;Ne );
+    InitializeESet( Graph, ESet ); /* 初始化边的最小堆 */
+    /* 创建包含所有顶点但没有边的图。注意用邻接表版本 */
+    MST = CreateGraph(Graph-&gt;Nv);
+    TotalWeight = 0; /* 初始化权重和     */
+    ECount = 0;      /* 初始化收录的边数 */
+ 
+    NextEdge = Graph-&gt;Ne; /* 原始边集的规模 */
+    while ( ECount &lt; Graph-&gt;Nv-1 ) {  /* 当收集的边不足以构成树时 */
+        NextEdge = GetEdge( ESet, NextEdge ); /* 从边集中得到最小边的位置 */
+        if (NextEdge &lt; 0) /* 边集已空 */
+            break;
+        /* 如果该边的加入不构成回路，即两端结点不属于同一连通集 */
+        if ( CheckCycle( VSet, ESet[NextEdge].V1, ESet[NextEdge].V2 )==true ) {
+            /* 将该边插入MST */
+            InsertEdge( MST, ESet+NextEdge );
+            TotalWeight += ESet[NextEdge].Weight; /* 累计权重 */
+            ECount++; /* 生成树中边数加1 */
+        }
+    }
+    if ( ECount &lt; Graph-&gt;Nv-1 )
+        TotalWeight = -1; /* 设置错误标记，表示生成树不存在 */
+ 
+    return TotalWeight;
+}
+</code></pre>
+<p>时间复杂度T=O(|E|log|E|)</p>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本概念">基本概念</a></li>
+        <li><a href="#贪心算法">贪心算法</a></li>
+        <li><a href="#prim算法">Prim算法</a></li>
+        <li><a href="#kruskal算法">Kruskal算法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/keichw" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-toggle-mode">
+        <ion-icon name="contrast"></ion-icon>
+    </div>
+    <div class="btn-scroll-top">
+        <ion-icon name="chevron-up"></ion-icon>
+    </div>
+</div>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            <span>&copy; 2020 <a href="https://example.com">Kinopio</a> |
+                基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
+                   target="_blank">Hugo</a> 构建</span>
+        </div>
+    </div>
+</footer>
+    
+    <script async type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+</body>
+
+</html>
