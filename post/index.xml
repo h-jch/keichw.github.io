@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jul 2019 23:41:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 21:07:03 +0800</lastBuildDate>
     
 	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaWeb技术原理</title>
+      <link>https://example.com/post/javaweb/</link>
+      <pubDate>Mon, 06 Jul 2020 21:07:03 +0800</pubDate>
+      
+      <guid>https://example.com/post/javaweb/</guid>
+      <description>最近在重温JavaWeb的内容，特此记录一下。 1 基本概念 1.1 前言 web开发： 静态web html，css 提供给所有人看的数据始终不会变化 动态web 几乎所有网站，淘宝 提供给所有人看的数据始终会发生变化，每个</description>
+    </item>
     
     <item>
       <title>拓扑排序</title>
