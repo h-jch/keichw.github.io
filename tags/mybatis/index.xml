@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on Kinopio BLOG</title>
-    <link>https://example.com/tags/java/</link>
-    <description>Recent content in java on Kinopio BLOG</description>
+    <title>mybatis on Kinopio BLOG</title>
+    <link>https://example.com/tags/mybatis/</link>
+    <description>Recent content in mybatis on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 11 Jul 2020 19:49:02 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://example.com/post/study-mybatis/</guid>
       <description>1 简介 1.1 什么是MyBatis 持久层框架 定制化SQL、存储过程和高级映射 使用简单的XML或注解配置，映射原生类型、接口和POJO为数据库中的记录 1.2 持久化 数据持久化 持久化就是将程序的数据在持久状态和瞬时状</description>
-    </item>
-    
-    <item>
-      <title>JavaWeb技术原理</title>
-      <link>https://example.com/post/javaweb/</link>
-      <pubDate>Mon, 06 Jul 2020 21:07:03 +0800</pubDate>
-      
-      <guid>https://example.com/post/javaweb/</guid>
-      <description>最近在重温JavaWeb的内容，特此记录一下。 1 基本概念 1.1 前言 web开发： 静态web html，css 提供给所有人看的数据始终不会变化 动态web 几乎所有网站，淘宝 提供给所有人看的数据始终会发生变化，每个</description>
     </item>
     
   </channel>
