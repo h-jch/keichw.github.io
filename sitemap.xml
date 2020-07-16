@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://example.com/tags/java/</loc>
-    <lastmod>2020-07-11T19:49:02+08:00</lastmod>
+    <lastmod>2020-07-16T17:57:24+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/</loc>
-    <lastmod>2020-07-11T19:49:02+08:00</lastmod>
+    <lastmod>2020-07-16T17:57:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2020-07-16T17:57:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/spring/</loc>
+    <lastmod>2020-07-16T17:57:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/study-spring/</loc>
+    <lastmod>2020-07-16T17:57:24+08:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +34,6 @@
   
   <url>
     <loc>https://example.com/post/study-mybatis/</loc>
-    <lastmod>2020-07-11T19:49:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/post/</loc>
     <lastmod>2020-07-11T19:49:02+08:00</lastmod>
   </url>
   
