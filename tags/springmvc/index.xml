@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spring on Kinopio BLOG</title>
-    <link>https://example.com/tags/spring/</link>
-    <description>Recent content in spring on Kinopio BLOG</description>
+    <title>springmvc on Kinopio BLOG</title>
+    <link>https://example.com/tags/springmvc/</link>
+    <description>Recent content in springmvc on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 19 Jul 2020 00:41:40 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/springmvc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://example.com/post/study-springmvc/</guid>
       <description>1 简介 1.1 定义 首先，MVC是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范 模型（Dao，Service） 视图（jsp/html） 控制器（Servlet） S</description>
-    </item>
-    
-    <item>
-      <title>Spring学习笔记</title>
-      <link>https://example.com/post/study-spring/</link>
-      <pubDate>Thu, 16 Jul 2020 17:57:24 +0800</pubDate>
-      
-      <guid>https://example.com/post/study-spring/</guid>
-      <description>1 简介 1.1 历史 Spring框架以interface21框架为基础，经过重新设计，并不断丰富其内涵，与2004年3月24日发布了1.0正式版 作者为Rod Johnson 1.2 理念 使现有的技术更加容易使用 本身包括很多内容，并</description>
     </item>
     
   </channel>

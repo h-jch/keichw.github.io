@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jul 2020 17:57:24 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 00:41:40 +0800</lastBuildDate>
     
 	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SpringMVC学习笔记</title>
+      <link>https://example.com/post/study-springmvc/</link>
+      <pubDate>Sun, 19 Jul 2020 00:41:40 +0800</pubDate>
+      
+      <guid>https://example.com/post/study-springmvc/</guid>
+      <description>1 简介 1.1 定义 首先，MVC是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范 模型（Dao，Service） 视图（jsp/html） 控制器（Servlet） S</description>
+    </item>
     
     <item>
       <title>Spring学习笔记</title>
