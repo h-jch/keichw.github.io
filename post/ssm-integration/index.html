@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.73.0" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8aa2d3" />
+<meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.6.0/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>SSM整合配置笔记 - Kinopio BLOG</title>
+
+
+<meta name="author" content="Kinopio" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="spring, springmvc, mybatis, java" />
+
+<meta property="og:title" content="SSM整合配置笔记" />
+<meta property="og:description" content="首先新建maven项目，导入相关的依赖，junit，mysql，c3p0，servlet，jsp，jstl，mybatis，mybatis-spring，spring-webmvc，spring-jd" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/post/ssm-integration/" />
+<meta property="og:image" content="https://example.com/img/og.png"/>
+<meta property="article:published_time" content="2020-07-20T00:06:06+08:00" />
+<meta property="article:modified_time" content="2020-07-20T00:06:06+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/img/og.png"/>
+
+<meta name="twitter:title" content="SSM整合配置笔记"/>
+<meta name="twitter:description" content="首先新建maven项目，导入相关的依赖，junit，mysql，c3p0，servlet，jsp，jstl，mybatis，mybatis-spring，spring-webmvc，spring-jd"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+<link rel="stylesheet" href="/assets/css/fuji.min.css" />
+
+
+
+
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+    
+    var fujiThemeData = localStorage.getItem('fuji_data-theme');
+    
+    if (!fujiThemeData) {
+        localStorage.setItem('fuji_data-theme', 'auto');
+    } else {
+        
+        if (fujiThemeData !== 'auto') {
+            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+        }
+    }
+</script>
+<script data-cfasync="false">
+    
+    function browserDetection(ua) {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    var ua = window.navigator.userAgent;
+    if (browserDetection(ua)) {
+        window.location.href('https:\/\/example.com\/ie\/');
+    }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://example.com">Kinopio BLOG</a>
+            
+            <span class="title-sub">(ง •̀_•́)ง</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://example.com/post/ssm-integration/">SSM整合配置笔记</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><ion-icon name="today"></ion-icon>&nbsp;2020-07-20</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;1887 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;4 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/spring">spring</a>&nbsp;<a href="/tags/springmvc">springmvc</a>&nbsp;<a href="/tags/mybatis">mybatis</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>首先新建maven项目，导入相关的依赖，junit，mysql，c3p0，servlet，jsp，jstl，mybatis，mybatis-spring，spring-webmvc，spring-jdbc</p>
+<p>建立dao，service，controller，pojo，新建mybatis-config.xml，applicationContext.xml</p>
+<h3 id="mybatis层">MyBatis层</h3>
+<ol>
+<li>新建数据库配置文件database.properties</li>
+</ol>
+<pre><code class="language-properties">jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/ssm?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+jdbc.username=root
+jdbc.password=123456
+</code></pre>
+<ol start="2">
+<li>IDEA关联数据库</li>
+<li>在mybatis-config.xml中配置</li>
+</ol>
+<pre><code class="language-xml">&lt;!--让spring去配置数据源--&gt;
+
+&lt;typeAliases&gt;
+    &lt;package name=&quot;com.hjc.pojo&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
+<ol start="4">
+<li>编写实体类</li>
+</ol>
+<pre><code class="language-java">public class User {
+    private int userId;
+    private String userName;
+    private String address;
+    
+    //省略get/set，toString方法
+}
+</code></pre>
+<ol start="5">
+<li>编写UserMapper接口</li>
+</ol>
+<pre><code class="language-java">public interface UserMapper {
+    int addUser(User user);
+    int deleteUserById(@param(&quot;userId&quot;) int id);
+    int updateUser(User user);
+    User findUserById(@param(&quot;userId&quot;) int id);
+    List&lt;User&gt; findAllUser();
+}
+</code></pre>
+<ol start="6">
+<li>在resources文件夹下新建com/hjc/dao/UserMapper.xml，注意不是包路径，是文件夹路径</li>
+</ol>
+<pre><code class="language-xml">&lt;mapper namespace=&quot;com.hjc.dao.UserMapper&quot;&gt;
+    &lt;insert id=&quot;addUser&quot; parameterType=&quot;User&quot;&gt;
+        insert into user (userId, userName, address) values (userId, userName, address)
+    &lt;/insert&gt;
+    &lt;delete id=&quot;deleteUserById&quot; parameterType=&quot;int&quot;&gt;
+        delete from user where userId = #{userId}
+    &lt;/delete&gt;
+    &lt;update id=&quot;updateUser&quot; parameterType=&quot;User&quot;&gt;
+        update user set userName = #{userName}, address = #{address} where userId = #{userId}
+    &lt;/update&gt;
+    &lt;select id=&quot;findUserById&quot; parameterType=&quot;int&quot; resultType=&quot;User&quot;&gt;
+        select * from user where userId = #{userId}
+    &lt;/select&gt;
+    &lt;select id=&quot;findAllUser&quot; resultType=&quot;User&quot;&gt;
+        select * from user
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="7">
+<li>在mybatis-config.xml中注册UserMapper</li>
+</ol>
+<pre><code class="language-xml">&lt;mappers&gt;
+    &lt;mapper resource=&quot;com/hjc/dao/UserMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<ol start="8">
+<li>编写UserService接口</li>
+</ol>
+<pre><code class="language-java">public interface UserService {
+    int addUser(User user);
+    int deleteUserById(int id);
+    int updateUser(User user);
+    User findUserById(int id);
+    List&lt;User&gt; findAllUser();
+}
+</code></pre>
+<ol start="9">
+<li>编写UserService接口的实现类UserServiceImpl</li>
+</ol>
+<pre><code class="language-java">public class UserServiceImpl {
+    
+    private UserMapper userMapper;
+    
+    public void setUserMapper(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
+    
+    public int addUser(User user) {
+        return userMapper.addUser(user);
+    }
+    
+    public int deleteUserById(int id) {
+        return userMapper.deleteUserById(id);
+    }
+    
+    public int updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
+    
+    public User findUserById(int id) {
+        return userMapper.findUserById(id);
+    }
+    
+    public List&lt;User&gt; findAllUser() {
+        return userMapper.findAllUser();
+    }
+}
+</code></pre>
+<h3 id="spring层">Spring层</h3>
+<ol>
+<li>新建spring-dao.xml注册dao层的类</li>
+</ol>
+<pre><code class="language-xml">&lt;!--关联数据库配置文件--&gt;
+&lt;context:property-placeholder location=&quot;classpath:database.properties&quot;/&gt;
+
+&lt;!--配置连接池，使用c3p0，也可以使用Spring原生的连接池或其他连接池--&gt;
+&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+    &lt;property name=&quot;driverClass&quot; value=&quot;${jdbc.driver}&quot;/&gt;
+    &lt;property name=&quot;jdbcUrl&quot; value=&quot;${jdbc.url}&quot;/&gt;
+    &lt;property name=&quot;user&quot; value=&quot;${jdbc.username}&quot;/&gt;
+    &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
+    &lt;!--还可以配置连接池的其他属性--&gt;
+&lt;/bean&gt;
+
+&lt;!--注册sqlSessionFactory--&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;!--绑定mybatis-config.xml--&gt;
+    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis-config.xml&quot;/&gt;
+&lt;/bean&gt;
+
+&lt;!--配置sqlSessionTemplate--&gt;
+&lt;bean id=&quot;sqlSession&quot; class=&quot;org.mybatis.spring.SqlSessionTemplate&quot;&gt;
+    &lt;constructor-arg index=&quot;0&quot; ref=&quot;sqlSessionFactory&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<ol start="2">
+<li>编写UserMapper接口的实现类UserMapperImpl</li>
+</ol>
+<pre><code class="language-java">public class UserMapperImpl implements UserMapper {
+    
+    private SqlSession sqlSession;
+    
+    public void setSqlSession(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+    }
+    
+    public int addUser(User user) {
+        return sqlSession.getMapper(UserMapper.class).addUser(user);
+    }
+    
+    public int deleteUserById(int id) {
+        return sqlSession.getMapper(UserMapper.class).deleteUserById(id);
+    }
+    
+    public int updateUser(User user) {
+        return sqlSession.getMapper(UserMapper.class).updateUser(user);
+    }
+    
+    public User findUserById(int id) {
+        return sqlSession.getMapper(UserMapper.class).findUserById(id);
+    }
+    
+    public List&lt;User&gt; findAllUser() {
+        return sqlSession.getMapper(UserMapper.class).findAllUser();
+    }
+}
+</code></pre>
+<ol start="3">
+<li>在spring-dao.xml中配置实现类</li>
+</ol>
+<pre><code class="language-xml">&lt;bean id=&quot;userMapper&quot; class=&quot;com.hjc.dao.UserMapperImpl&quot;&gt;
+    &lt;property name=&quot;sqlSession&quot; ref=&quot;sqlSession&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<ol start="4">
+<li>新建spring-service.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;!--扫描service包--&gt;
+&lt;context:component-scan base-package=&quot;com.hjc.service&quot;/&gt;
+
+&lt;!--将业务类注入到spring，通过配置或者注解实现--&gt;
+&lt;bean id=&quot;userService&quot; class=&quot;com.hjc.service.UserServiceImpl&quot;&gt;
+    &lt;property name=&quot;userMapper&quot; ref=&quot;userMapper&quot;/&gt;
+&lt;/bean&gt;
+&lt;!--注解实现：在UserServiceImpl类名上加上@Service，在set方法上加上@Autowired--&gt;
+
+&lt;!--配置声明式事务--&gt;
+&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<h3 id="springmvc层">SpringMVC层</h3>
+<ol>
+<li>配置web.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;servlet&gt;
+    &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;filter&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;utf-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+
+&lt;session-config&gt;
+    &lt;session-timeout&gt;15&lt;/session-timeout&gt;
+&lt;/session-config&gt;
+</code></pre>
+<ol start="2">
+<li>配置spring-mvc.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;!--注解驱动--&gt;
+&lt;mvc:annotation-driven/&gt;
+&lt;!--静态资源过滤--&gt;
+&lt;mvc:default-servlet-handler/&gt;
+&lt;!--扫描包--&gt;
+&lt;context:component-scan base-package=&quot;com.hjc.controller&quot;/&gt;
+&lt;!--视图解析器--&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<ol start="3">
+<li>在applicationContext.xml中导入三个xml</li>
+</ol>
+<pre><code class="language-xml">&lt;import resource=&quot;classpath:spring-dao.xml&quot;/&gt;
+&lt;import resource=&quot;classpath:spring-service.xml&quot;/&gt;
+&lt;import resource=&quot;classpath:spring-mvc.xml&quot;/&gt;
+</code></pre>
+<p>至此，基本的环境已经搭建完毕，接下来就是实现业务</p>
+<h3 id="业务">业务</h3>
+<p>实现查询所有用户的功能</p>
+<ol>
+<li>编写UserController</li>
+</ol>
+<pre><code class="language-java">@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
+    @Autowired
+    @Qualifier(&quot;userService&quot;)
+    private UserService userService;
+    
+    //查询所有用户
+    @RequestMapping(&quot;/allUser&quot;)
+    public String getAllUser(Model model) {
+        List&lt;User&gt; userList = userService.findAllUser();
+        model.addAttribute(&quot;list&quot;, userList);
+        return &quot;allUser&quot;
+    }
+}
+</code></pre>
+<ol start="2">
+<li>在jsp目录下新建allUser.jsp</li>
+</ol>
+<pre><code class="language-jsp">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;所有用户&lt;/title&gt;
+        &lt;%--BootStrap--%&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            
+            &lt;div class=&quot;row clearfix&quot;&gt;
+                &lt;div class=&quot;col-md-12 column&quot;&gt;
+                    &lt;div class=&quot;page-header&quot;&gt;
+                        &lt;h1&gt;
+                            &lt;small&gt;用户列表---------显示所有用户&lt;/small&gt;
+                        &lt;/h1&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;row clearfix&quot;&gt;
+                &lt;div class=&quot;col-md-12 column&quot;&gt;
+                    &lt;table class=&quot;table table-hover table-striped&quot;&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;用户编号&lt;/th&gt;
+                                &lt;th&gt;用户姓名&lt;/th&gt;
+                                &lt;th&gt;用户地址&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;%--数据从list中遍历出来--%&gt;
+                        &lt;tbody&gt;
+                            &lt;c:forEach var=&quot;user&quot; items=&quot;${list}&quot;&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;${user.userId}&lt;/td&gt;
+                                    &lt;td&gt;${user.userName}&lt;/td&gt;
+                                    &lt;td&gt;${user.address}&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/c:forEach&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol start="3">
+<li>在index.jsp中编写</li>
+</ol>
+<pre><code class="language-jsp">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;首页&lt;/title&gt;
+        &lt;style&gt;
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+            }
+            h3{
+                width: 180px;
+                height: 38px;
+                margin: 100px auto;
+                text-align: center;
+                line-height: 38px;
+                background: deepskyblue;
+                border-radius: 5px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h3&gt;
+            &lt;a href=&quot;${pageContext.request.contextPath}/user/allUser&quot;&gt;查看所有用户&lt;/a&gt;
+        &lt;/h3&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mybatis层">MyBatis层</a></li>
+        <li><a href="#spring层">Spring层</a></li>
+        <li><a href="#springmvc层">SpringMVC层</a></li>
+        <li><a href="#业务">业务</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/search/">Search</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/jdbc/">jdbc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mybatis/">mybatis</a>
+            </span>
+            
+            <span>
+                <a href="/tags/servlet/">servlet</a>
+            </span>
+            
+            <span>
+                <a href="/tags/spring/">spring</a>
+            </span>
+            
+            <span>
+                <a href="/tags/springmvc/">springmvc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/web/">web</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/keichw" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-toggle-mode">
+        <ion-icon name="contrast"></ion-icon>
+    </div>
+    <div class="btn-scroll-top">
+        <ion-icon name="chevron-up"></ion-icon>
+    </div>
+</div>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            <span>&copy; 2020 <a href="https://example.com">Kinopio</a> |
+                基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
+                   target="_blank">Hugo</a> 构建</span>
+        </div>
+    </div>
+</footer>
+    
+    <script async type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+</body>
+
+</html>
