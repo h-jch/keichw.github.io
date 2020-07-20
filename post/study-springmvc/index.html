@@ -123,7 +123,7 @@
         <a href="https://example.com/post/study-springmvc/">SpringMVC学习笔记</a>
     </h2>
     <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon>&nbsp;2020-07-19</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;3943 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;8 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/spring">spring</a>&nbsp;<a href="/tags/springmvc">springmvc</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+        <span><ion-icon name="today"></ion-icon>&nbsp;2020-07-19</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4855 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;10 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/spring">spring</a>&nbsp;<a href="/tags/springmvc">springmvc</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
     </div>
     
     
@@ -570,6 +570,105 @@ public class UserController {
 &lt;/mvc:annotation-driven&gt;
 </code></pre>
 <p>如果使用fastjson，使用方法和Jackson类似</p>
+<h2 id="9-拦截器">9 拦截器</h2>
+<p>拦截器类似于过滤器Filter，用于对处理器进行预处理和后处理</p>
+<p>过滤器和拦截器的区别：拦截器是AOP思想的具体应用</p>
+<ul>
+<li>过滤器
+<ul>
+<li>servlet规范中的一部分，任何JavaWeb都可以使用</li>
+<li>在url-pattern中配置了/*之后，可以对所有要访问的资源进行拦截</li>
+</ul>
+</li>
+<li>拦截器
+<ul>
+<li>拦截器是SpringMVC框架的，只有使用了SpringMVC框架的项目才能使用</li>
+<li>拦截器只会拦截访问的控制器方法，如果访问的是jsp/html/css/image/js是不会进行拦截的</li>
+</ul>
+</li>
+</ul>
+<h3 id="91-自定义拦截器">9.1 自定义拦截器</h3>
+<p>想要自定义拦截器，只要编写的类实现HandlerInterceptor接口</p>
+<pre><code class="language-java">public class MyInterceptor implements HandlerInterceptor {
+    
+    //return true: 放行，执行下一个拦截器
+    //return false: 不放行
+    public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object handler) throws Exception {
+        System.out.println(&quot;处理前&quot;);
+        return true;
+    }
+    
+    public void postHandle(HttpServletRequest req, HttpServletResponse resp, Object handler, ModelAndView modelAndView) throws Exception {
+        System.out.println(&quot;处理后&quot;);
+    }
+    
+    public void afterCompletion(HttpServletRequest req, HttpServletResponse resp, Object handler, Exception ex) throws Exception {
+        System.out.println(&quot;请理&quot;);
+    }
+}
+</code></pre>
+<p>配置拦截器</p>
+<pre><code class="language-xml">&lt;mvc:interceptors&gt;
+    &lt;mvc:interceptor&gt;
+        &lt;!--/**代表这个请求下的所有请求--&gt;
+        &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+        &lt;bean class=&quot;com.hjc.config.MyInterceptor&quot;/&gt;
+    &lt;/mvc:interceptor&gt;
+&lt;/mvc:interceptors&gt;
+</code></pre>
+<p>只要访问任一控制器，拦截器的三个方法都会执行，首先执行preHandle，再执行控制器方法，最后执行postHandle和afterCompletion方法。如果preHandle方法返回false，那么访问控制器时，只会执行preHandle方法，不会执行后续方法</p>
+<h3 id="92-拦截器实现登陆判断验证">9.2 拦截器实现登陆判断验证</h3>
+<p>编写LoginController</p>
+<pre><code class="language-java">@Controller
+@RequestMapping(&quot;/user&quot;)
+public class LoginController {
+        
+    @RequestMapping(&quot;/main&quot;)
+    public String main() {
+        return &quot;main&quot;;
+    }
+    
+    @RequestMapping(&quot;/goLogin&quot;)
+    public String goLogin() {
+        return &quot;login&quot;;
+    }
+    
+    @RequestMappint(&quot;/login&quot;)
+    public String login(HttpSession session, String username, String password) {
+        //省略判断username, password的代码
+        session.setAttribute(&quot;userLoginInfo&quot;, username);
+        return &quot;main&quot;;
+    }
+}
+</code></pre>
+<p>在首页index.jsp中放置两个超链接，分别跳向“/goLogin”和“/main”，方法分别返回登陆页面login.jsp和main.jsp（放置于WEB-INF/jsp/目录下）</p>
+<p>编写一个拦截器，使得未登录时无法访问main.jsp</p>
+<pre><code class="language-java">public class LoginInterceptor implements HandlerInterceptor {
+    public boolean preHandler(HttpServletRequest req, HttpServletResponse resp, Object handler) throws Exception {
+        HttpSession session = req.getSession();
+        if (req.getRequestURI().contains(&quot;goLogin&quot;)) {
+            return true;
+        }
+        if (req.getRequestURI().contains(&quot;login&quot;)) {
+            return true;
+        }
+        if (session.getAttribute(&quot;userLoginInfo&quot;) != null) {
+            return true;
+        }
+        req.getRequestDispatcher(&quot;/WEB-INF/jsp/login.jsp&quot;).forward();
+        return false;
+    }
+}
+</code></pre>
+<p>配置拦截器</p>
+<pre><code class="language-xml">&lt;mvc:interceptors&gt;
+    &lt;mvc:interceptor&gt;
+        &lt;!--/**代表这个请求下的所有请求--&gt;
+        &lt;mvc:mapping path=&quot;/user/**&quot;/&gt;
+        &lt;bean class=&quot;com.hjc.config.LoginInterceptor&quot;/&gt;
+    &lt;/mvc:interceptor&gt;
+&lt;/mvc:interceptors&gt;
+</code></pre>
 
     </div>
 </article>
@@ -638,6 +737,12 @@ public class UserController {
         <li><a href="#81-概念">8.1 概念</a></li>
         <li><a href="#82-语法">8.2 语法</a></li>
         <li><a href="#83-controller返回json数据">8.3 Controller返回JSON数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-拦截器">9 拦截器</a>
+      <ul>
+        <li><a href="#91-自定义拦截器">9.1 自定义拦截器</a></li>
+        <li><a href="#92-拦截器实现登陆判断验证">9.2 拦截器实现登陆判断验证</a></li>
       </ul>
     </li>
   </ul>
