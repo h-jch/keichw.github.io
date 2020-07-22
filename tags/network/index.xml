@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Kinopio BLOG</title>
+    <link>https://example.com/tags/network/</link>
+    <description>Recent content in network on Kinopio BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Jul 2020 23:08:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java网络编程笔记</title>
+      <link>https://example.com/post/study-java-network-programming/</link>
+      <pubDate>Wed, 22 Jul 2020 23:08:11 +0800</pubDate>
+      
+      <guid>https://example.com/post/study-java-network-programming/</guid>
+      <description>&lt;h2 id=&#34;1-ip地址&#34;&gt;1 IP地址&lt;/h2&gt;
+&lt;p&gt;使用java的类InetAddress&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
