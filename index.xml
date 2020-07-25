@@ -6,10 +6,19 @@
     <description>Recent content on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2020 23:08:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 00:13:07 +0800</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java多线程笔记</title>
+      <link>https://example.com/post/study-java-thread/</link>
+      <pubDate>Sun, 26 Jul 2020 00:13:07 +0800</pubDate>
+      
+      <guid>https://example.com/post/study-java-thread/</guid>
+      <description>1 定义 程序 程序是指令和数据的有序集合，没有任何运行的含义，是个静态的概念 进程（process） 进程是执行程序的一次执行过程，是动态的概念 进程是系统资源分配的单位 线程（thread） 一个进程中可以包含若</description>
+    </item>
     
     <item>
       <title>Java网络编程笔记</title>
