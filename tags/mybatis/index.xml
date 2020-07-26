@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mybatis on Kinopio BLOG</title>
-    <link>https://example.com/tags/mybatis/</link>
+    <link>https://keichw.github.io/tags/mybatis/</link>
     <description>Recent content in mybatis on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 20 Jul 2020 00:06:06 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keichw.github.io/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SSM整合配置笔记</title>
-      <link>https://example.com/post/ssm-integration/</link>
+      <link>https://keichw.github.io/post/ssm-integration/</link>
       <pubDate>Mon, 20 Jul 2020 00:06:06 +0800</pubDate>
       
-      <guid>https://example.com/post/ssm-integration/</guid>
+      <guid>https://keichw.github.io/post/ssm-integration/</guid>
       <description>首先新建maven项目，导入相关的依赖，junit，mysql，c3p0，servlet，jsp，jstl，mybatis，mybatis-spring，spring-webmvc，spring-jd</description>
     </item>
     
     <item>
       <title>MyBatis学习笔记</title>
-      <link>https://example.com/post/study-mybatis/</link>
+      <link>https://keichw.github.io/post/study-mybatis/</link>
       <pubDate>Sat, 11 Jul 2020 19:49:02 +0800</pubDate>
       
-      <guid>https://example.com/post/study-mybatis/</guid>
+      <guid>https://keichw.github.io/post/study-mybatis/</guid>
       <description>1 简介 1.1 什么是MyBatis 持久层框架 定制化SQL、存储过程和高级映射 使用简单的XML或注解配置，映射原生类型、接口和POJO为数据库中的记录 1.2 持久化 数据持久化 持久化就是将程序的数据在持久状态和瞬时状</description>
     </item>
     

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on Kinopio BLOG</title>
-    <link>https://example.com/search/</link>
+    <link>https://keichw.github.io/search/</link>
     <description>Recent content in Search on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://example.com/search/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keichw.github.io/search/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

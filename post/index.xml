@@ -2,202 +2,202 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Kinopio BLOG</title>
-    <link>https://example.com/post/</link>
+    <link>https://keichw.github.io/post/</link>
     <description>Recent content in Posts on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Jul 2020 00:13:07 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keichw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java多线程笔记</title>
-      <link>https://example.com/post/study-java-thread/</link>
+      <link>https://keichw.github.io/post/study-java-thread/</link>
       <pubDate>Sun, 26 Jul 2020 00:13:07 +0800</pubDate>
       
-      <guid>https://example.com/post/study-java-thread/</guid>
+      <guid>https://keichw.github.io/post/study-java-thread/</guid>
       <description>1 定义 程序 程序是指令和数据的有序集合，没有任何运行的含义，是个静态的概念 进程（process） 进程是执行程序的一次执行过程，是动态的概念 进程是系统资源分配的单位 线程（thread） 一个进程中可以包含若</description>
     </item>
     
     <item>
       <title>Java网络编程笔记</title>
-      <link>https://example.com/post/study-java-network-programming/</link>
+      <link>https://keichw.github.io/post/study-java-network-programming/</link>
       <pubDate>Wed, 22 Jul 2020 23:08:11 +0800</pubDate>
       
-      <guid>https://example.com/post/study-java-network-programming/</guid>
+      <guid>https://keichw.github.io/post/study-java-network-programming/</guid>
       <description>&lt;h2 id=&#34;1-ip地址&#34;&gt;1 IP地址&lt;/h2&gt;
 &lt;p&gt;使用java的类InetAddress&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SSM整合配置笔记</title>
-      <link>https://example.com/post/ssm-integration/</link>
+      <link>https://keichw.github.io/post/ssm-integration/</link>
       <pubDate>Mon, 20 Jul 2020 00:06:06 +0800</pubDate>
       
-      <guid>https://example.com/post/ssm-integration/</guid>
+      <guid>https://keichw.github.io/post/ssm-integration/</guid>
       <description>首先新建maven项目，导入相关的依赖，junit，mysql，c3p0，servlet，jsp，jstl，mybatis，mybatis-spring，spring-webmvc，spring-jd</description>
     </item>
     
     <item>
       <title>SpringMVC学习笔记</title>
-      <link>https://example.com/post/study-springmvc/</link>
+      <link>https://keichw.github.io/post/study-springmvc/</link>
       <pubDate>Sun, 19 Jul 2020 00:41:40 +0800</pubDate>
       
-      <guid>https://example.com/post/study-springmvc/</guid>
+      <guid>https://keichw.github.io/post/study-springmvc/</guid>
       <description>1 简介 1.1 定义 首先，MVC是模型（Model），视图（View），控制器（Controller）的简写，是一种软件设计规范 模型（Dao，Service） 视图（jsp/html） 控制器（Servlet） S</description>
     </item>
     
     <item>
       <title>Spring学习笔记</title>
-      <link>https://example.com/post/study-spring/</link>
+      <link>https://keichw.github.io/post/study-spring/</link>
       <pubDate>Thu, 16 Jul 2020 17:57:24 +0800</pubDate>
       
-      <guid>https://example.com/post/study-spring/</guid>
+      <guid>https://keichw.github.io/post/study-spring/</guid>
       <description>1 简介 1.1 历史 Spring框架以interface21框架为基础，经过重新设计，并不断丰富其内涵，与2004年3月24日发布了1.0正式版 作者为Rod Johnson 1.2 理念 使现有的技术更加容易使用 本身包括很多内容，并</description>
     </item>
     
     <item>
       <title>MyBatis学习笔记</title>
-      <link>https://example.com/post/study-mybatis/</link>
+      <link>https://keichw.github.io/post/study-mybatis/</link>
       <pubDate>Sat, 11 Jul 2020 19:49:02 +0800</pubDate>
       
-      <guid>https://example.com/post/study-mybatis/</guid>
+      <guid>https://keichw.github.io/post/study-mybatis/</guid>
       <description>1 简介 1.1 什么是MyBatis 持久层框架 定制化SQL、存储过程和高级映射 使用简单的XML或注解配置，映射原生类型、接口和POJO为数据库中的记录 1.2 持久化 数据持久化 持久化就是将程序的数据在持久状态和瞬时状</description>
     </item>
     
     <item>
       <title>JavaWeb技术原理</title>
-      <link>https://example.com/post/javaweb/</link>
+      <link>https://keichw.github.io/post/javaweb/</link>
       <pubDate>Mon, 06 Jul 2020 21:07:03 +0800</pubDate>
       
-      <guid>https://example.com/post/javaweb/</guid>
+      <guid>https://keichw.github.io/post/javaweb/</guid>
       <description>最近在重温JavaWeb的内容，特此记录一下。 1 基本概念 1.1 前言 web开发： 静态web html，css 提供给所有人看的数据始终不会变化 动态web 几乎所有网站，淘宝 提供给所有人看的数据始终会发生变化，每个</description>
     </item>
     
     <item>
       <title>拓扑排序</title>
-      <link>https://example.com/post/topsort/</link>
+      <link>https://keichw.github.io/post/topsort/</link>
       <pubDate>Tue, 30 Jul 2019 23:41:00 +0800</pubDate>
       
-      <guid>https://example.com/post/topsort/</guid>
+      <guid>https://keichw.github.io/post/topsort/</guid>
       <description>基本概念 拓扑序：如果图中从V到W有一条有向路径，则V一定排在W之前。满足此条件的顶点序列称为一个拓扑序，那么拓扑排序就是获得一个拓扑序的过程。另外，如果有合理的拓扑序，则必定是有向无环图。 拓扑排序算法</description>
     </item>
     
     <item>
       <title>最小生成树</title>
-      <link>https://example.com/post/minimum-spanning-tree/</link>
+      <link>https://keichw.github.io/post/minimum-spanning-tree/</link>
       <pubDate>Tue, 30 Jul 2019 16:37:00 +0800</pubDate>
       
-      <guid>https://example.com/post/minimum-spanning-tree/</guid>
+      <guid>https://keichw.github.io/post/minimum-spanning-tree/</guid>
       <description>基本概念 最小生成树 是一棵树 无回路，向生成树中任加一条边都一定构成回路 |V|个顶点一定有|V|-1条边 是生成树 包含全部顶点 |V|-1条边都在图里 边的权重最小 贪心算法 对于如何最小生成树的算法，我们使用贪心</description>
     </item>
     
     <item>
       <title>最短路径问题</title>
-      <link>https://example.com/post/shortest-path/</link>
+      <link>https://keichw.github.io/post/shortest-path/</link>
       <pubDate>Tue, 30 Jul 2019 15:40:00 +0800</pubDate>
       
-      <guid>https://example.com/post/shortest-path/</guid>
+      <guid>https://keichw.github.io/post/shortest-path/</guid>
       <description>最短路径问题的抽象 在网络中，求两个不同顶点之间的所有路径中，边的权值之和最小的那一条路径。 这条路径就是两点之间的最短路径 第一个顶点为源点 最后一个顶点为终点 问题分类 单源最短路径问题：从某固定源点出发，求</description>
     </item>
     
     <item>
       <title>图</title>
-      <link>https://example.com/post/graph/</link>
+      <link>https://keichw.github.io/post/graph/</link>
       <pubDate>Sat, 27 Jul 2019 23:30:00 +0800</pubDate>
       
-      <guid>https://example.com/post/graph/</guid>
+      <guid>https://keichw.github.io/post/graph/</guid>
       <description>基本概念 图表示多对多的关系。包含 一组顶点：通常用V(Vertex)表示顶点集合 一组边：通常用E(Edge)表示边的集合 边是顶点对：(v,w)是集合E的元素，其中v，w是集合V的元素 有向边&amp;lt;v,w</description>
     </item>
     
     <item>
       <title>排序算法</title>
-      <link>https://example.com/post/sort/</link>
+      <link>https://keichw.github.io/post/sort/</link>
       <pubDate>Sun, 21 Jul 2019 22:58:00 +0800</pubDate>
       
-      <guid>https://example.com/post/sort/</guid>
+      <guid>https://keichw.github.io/post/sort/</guid>
       <description>基本概念 void X_Sort(ElementType A[], int N) N是正整数 只讨论基于比较的排序(&amp;lt;、=、&amp;gt;有定义) 只讨论内部排序 稳定性：任意两个相等的数据，排序前后的相对位置不发生变化 没有一种排序是任何情况下都表现最好的 简单排序 冒泡排</description>
     </item>
     
     <item>
       <title>堆</title>
-      <link>https://example.com/post/heap/</link>
+      <link>https://keichw.github.io/post/heap/</link>
       <pubDate>Thu, 18 Jul 2019 12:27:00 +0800</pubDate>
       
-      <guid>https://example.com/post/heap/</guid>
+      <guid>https://keichw.github.io/post/heap/</guid>
       <description>基本概念 堆是一种用数组来实现的完全二叉树。堆分为两种：最大堆(大顶堆)和最小堆(小顶堆)，差别在于结点的排序方式。在最大堆中，任一结点的关键字是其子树所有结点的最大值，而在最小堆中，任一结点的关键字是</description>
     </item>
     
     <item>
       <title>平衡二叉树</title>
-      <link>https://example.com/post/balanced-binary-tree/</link>
+      <link>https://keichw.github.io/post/balanced-binary-tree/</link>
       <pubDate>Sun, 30 Jun 2019 16:24:00 +0800</pubDate>
       
-      <guid>https://example.com/post/balanced-binary-tree/</guid>
+      <guid>https://keichw.github.io/post/balanced-binary-tree/</guid>
       <description>对于一般的二叉搜索树，搜索树结点不同插入次序，将导致不同的深度和平均查找长度ASL。甚至在极端的情况下，二叉搜索树会退化称线性的链表，导致插入和查找的复杂度下降到O(n)，所以便提出了平衡二叉树的概念</description>
     </item>
     
     <item>
       <title>二叉搜索树</title>
-      <link>https://example.com/post/binary-search-tree/</link>
+      <link>https://keichw.github.io/post/binary-search-tree/</link>
       <pubDate>Sun, 30 Jun 2019 10:06:00 +0800</pubDate>
       
-      <guid>https://example.com/post/binary-search-tree/</guid>
+      <guid>https://keichw.github.io/post/binary-search-tree/</guid>
       <description>二叉搜索树是为了解决动态查找问题而提出来的，也叫做二叉排序树或二叉查找树。 基本概念 二叉搜索树(BST, Binary Search Tree)：一棵二叉树，可以为空；如果不为空，则要满足以下性质： 非空左子树的所有键值小于其根结</description>
     </item>
     
     <item>
       <title>二叉树</title>
-      <link>https://example.com/post/binary-tree/</link>
+      <link>https://keichw.github.io/post/binary-tree/</link>
       <pubDate>Sat, 29 Jun 2019 23:30:00 +0800</pubDate>
       
-      <guid>https://example.com/post/binary-tree/</guid>
+      <guid>https://keichw.github.io/post/binary-tree/</guid>
       <description>基本概念 二叉树：一个有穷的结点的集合，这个集合可以为空，若不为空，则它是由根节点和称为其左子树和右子树的两个不相交的二叉树组成。 有几种特殊的二叉树，分别是斜二叉树、完全二叉树和满二叉树。 二叉树的几个重</description>
     </item>
     
     <item>
       <title>队列</title>
-      <link>https://example.com/post/queue/</link>
+      <link>https://keichw.github.io/post/queue/</link>
       <pubDate>Tue, 25 Jun 2019 23:30:00 +0800</pubDate>
       
-      <guid>https://example.com/post/queue/</guid>
+      <guid>https://keichw.github.io/post/queue/</guid>
       <description>队列是一种基本的数据结构 基本概念 队列(Queue)：具有一定操作约束的线性表 只能在一端插入，而在另一端删除 数据插入：入队列(AddQ) 数据删除：出队列(DeleteQ) 先进先出：First In First Out(FIFO) 抽象数</description>
     </item>
     
     <item>
       <title>栈</title>
-      <link>https://example.com/post/stack/</link>
+      <link>https://keichw.github.io/post/stack/</link>
       <pubDate>Thu, 20 Jun 2019 23:30:00 +0800</pubDate>
       
-      <guid>https://example.com/post/stack/</guid>
+      <guid>https://keichw.github.io/post/stack/</guid>
       <description>栈是一种基本的数据结构 基本概念 栈(Stack)：具有一定操作约束的线性表。 只在一端(栈顶，Top)做插入、删除操作 插入数据：入栈(Push) 删除数据：出栈(Pop) 后入先出：Last In First Out(LIFO) 抽象数据类型</description>
     </item>
     
     <item>
       <title>线性表</title>
-      <link>https://example.com/post/linear-list/</link>
+      <link>https://keichw.github.io/post/linear-list/</link>
       <pubDate>Wed, 19 Jun 2019 23:30:00 +0800</pubDate>
       
-      <guid>https://example.com/post/linear-list/</guid>
+      <guid>https://keichw.github.io/post/linear-list/</guid>
       <description>线性表是最基本的数据结构。 基本概念 线性表(Linear List)：由同类型数据元素构成有序序列的线性结构。 表中元素个数称为线性表的长度 线性表没有元素时称为空表 表起始位置为表头，表结束位置为表尾 抽象数据</description>
     </item>
     
     <item>
       <title>c&#43;&#43; const关键字</title>
-      <link>https://example.com/post/cpp-const/</link>
+      <link>https://keichw.github.io/post/cpp-const/</link>
       <pubDate>Sat, 27 Apr 2019 22:45:00 +0800</pubDate>
       
-      <guid>https://example.com/post/cpp-const/</guid>
+      <guid>https://keichw.github.io/post/cpp-const/</guid>
       <description>关于const关键字，有几个注意点。 const的引用 首先是把引用绑定到const对象上，与普通引用不同，对常量的引用不能被用来修改它所绑定的对象。 const int ci=1024; const int &amp;amp;r1=ci; //正确：引用及其对应的对象都是常量 r1=42; //</description>
     </item>
     
     <item>
       <title>c&#43;&#43; primer学习</title>
-      <link>https://example.com/post/cppprimer-ans/</link>
+      <link>https://keichw.github.io/post/cppprimer-ans/</link>
       <pubDate>Fri, 19 Apr 2019 15:47:00 +0800</pubDate>
       
-      <guid>https://example.com/post/cppprimer-ans/</guid>
+      <guid>https://keichw.github.io/post/cppprimer-ans/</guid>
       <description>看《c++ primer》这本书已经很久了，也不敢说自己掌握了多少。之前过了一遍，这本书几乎覆盖了c++的全部知识点，很丰富，但也很杂。 最近在重看这本书，顺便把每节的习题给做了，并把部分习题代码上传到了</description>
     </item>
     

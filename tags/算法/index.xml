@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on Kinopio BLOG</title>
-    <link>https://example.com/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://keichw.github.io/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Jul 2019 23:41:00 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keichw.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>拓扑排序</title>
-      <link>https://example.com/post/topsort/</link>
+      <link>https://keichw.github.io/post/topsort/</link>
       <pubDate>Tue, 30 Jul 2019 23:41:00 +0800</pubDate>
       
-      <guid>https://example.com/post/topsort/</guid>
+      <guid>https://keichw.github.io/post/topsort/</guid>
       <description>基本概念 拓扑序：如果图中从V到W有一条有向路径，则V一定排在W之前。满足此条件的顶点序列称为一个拓扑序，那么拓扑排序就是获得一个拓扑序的过程。另外，如果有合理的拓扑序，则必定是有向无环图。 拓扑排序算法</description>
     </item>
     
     <item>
       <title>排序算法</title>
-      <link>https://example.com/post/sort/</link>
+      <link>https://keichw.github.io/post/sort/</link>
       <pubDate>Sun, 21 Jul 2019 22:58:00 +0800</pubDate>
       
-      <guid>https://example.com/post/sort/</guid>
+      <guid>https://keichw.github.io/post/sort/</guid>
       <description>基本概念 void X_Sort(ElementType A[], int N) N是正整数 只讨论基于比较的排序(&amp;lt;、=、&amp;gt;有定义) 只讨论内部排序 稳定性：任意两个相等的数据，排序前后的相对位置不发生变化 没有一种排序是任何情况下都表现最好的 简单排序 冒泡排</description>
     </item>
     
