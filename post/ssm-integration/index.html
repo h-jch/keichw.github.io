@@ -176,7 +176,7 @@ jdbc.password=123456
 </ol>
 <pre><code class="language-xml">&lt;mapper namespace=&quot;com.hjc.dao.UserMapper&quot;&gt;
     &lt;insert id=&quot;addUser&quot; parameterType=&quot;User&quot;&gt;
-        insert into user (userId, userName, address) values (userId, userName, address)
+        insert into user (userId, userName, address) values (#{userId}, #{userName}, #{address})
     &lt;/insert&gt;
     &lt;delete id=&quot;deleteUserById&quot; parameterType=&quot;int&quot;&gt;
         delete from user where userId = #{userId}
