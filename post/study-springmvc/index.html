@@ -123,7 +123,7 @@
         <a href="https://keichw.github.io/post/study-springmvc/">SpringMVC学习笔记</a>
     </h2>
     <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon>&nbsp;2020-07-19</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4855 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;10 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/spring">spring</a>&nbsp;<a href="/tags/springmvc">springmvc</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+        <span><ion-icon name="today"></ion-icon>&nbsp;2020-07-19</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4857 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;10 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/spring">spring</a>&nbsp;<a href="/tags/springmvc">springmvc</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
     </div>
     
     
@@ -367,7 +367,7 @@ public class HelloController {
 <p>这种方法实际项目中不推荐使用</p>
 <h3 id="53-springmvc实现转发和重定向">5.3 SpringMVC实现转发和重定向</h3>
 <ul>
-<li>通过SpringMVC实现转发和重定向，没有视图解析器</li>
+<li>通过SpringMVC实现转发和重定向，不经过视图解析器</li>
 </ul>
 <pre><code class="language-java">@Controller
 public class TestController {
@@ -392,7 +392,7 @@ public class TestController {
 </code></pre>
 <p>没有视图解析器，我们在写页面路径的时候要写其对应的全限定名</p>
 <ul>
-<li>通过SpringMVC来实现转发和重定向，有视图解析器</li>
+<li>通过SpringMVC来实现转发和重定向，经过视图解析器</li>
 </ul>
 <pre><code class="language-java">@Controller
 public class TestController {
