@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2020 03:10:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 16:00:48 +0800</lastBuildDate>
     
 	<atom:link href="https://keichw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>css中的选择器</title>
+      <link>https://keichw.github.io/post/css_selector/</link>
+      <pubDate>Tue, 11 Aug 2020 16:00:48 +0800</pubDate>
+      
+      <guid>https://keichw.github.io/post/css_selector/</guid>
+      <description>选择器 基本选择器 标签选择器：选择一类标签。 标签{} &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; h1 { color:rgb(218, 205, 88); background: #64a2f3; border-radius: 18px; } p { font-size: 20px; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;test1&amp;lt;/h1&amp;gt; &amp;lt;h1&amp;gt;test2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 类选择器 class：选择所有class属性一致的标签，跨标签。 .类名{} &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;</description>
+    </item>
     
     <item>
       <title>Java注解和反射笔记</title>
