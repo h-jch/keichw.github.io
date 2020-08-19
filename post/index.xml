@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kinopio BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2020 16:00:48 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 19:19:50 +0800</lastBuildDate>
     
 	<atom:link href="https://keichw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记录编译electerm踩过的坑</title>
+      <link>https://keichw.github.io/post/compile-electerm/</link>
+      <pubDate>Wed, 19 Aug 2020 19:19:50 +0800</pubDate>
+      
+      <guid>https://keichw.github.io/post/compile-electerm/</guid>
+      <description>最近导师给了个任务，让我改一个ssh工具，首选的有PuTTY和electerm。PuTTY这个软件感觉有点古老，而且是C写的，我就选了electerm electerm是github上的一个开源项目，基</description>
+    </item>
     
     <item>
       <title>css中的选择器</title>

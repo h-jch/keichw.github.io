@@ -3,22 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keichw.github.io/tags/electron/</loc>
+    <lastmod>2020-08-19T19:19:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keichw.github.io/</loc>
+    <lastmod>2020-08-19T19:19:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keichw.github.io/tags/nodejs/</loc>
+    <lastmod>2020-08-19T19:19:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keichw.github.io/post/</loc>
+    <lastmod>2020-08-19T19:19:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keichw.github.io/post/compile-electerm/</loc>
+    <lastmod>2020-08-19T19:19:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keichw.github.io/tags/css/</loc>
     <lastmod>2020-08-11T16:00:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://keichw.github.io/post/css_selector/</loc>
-    <lastmod>2020-08-11T16:00:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://keichw.github.io/</loc>
-    <lastmod>2020-08-11T16:00:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://keichw.github.io/post/</loc>
     <lastmod>2020-08-11T16:00:48+08:00</lastmod>
   </url>
   
